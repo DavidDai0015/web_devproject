@@ -5,6 +5,7 @@
   --body-color: #3d3d3d;
   --primary-white: #ffffff;
   --hover-color: #f5f5f5;
+  --secondary-grey: #e0e0e0;
 }
 
 /* Initalisation */
@@ -12,6 +13,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
 }
 
 body {
@@ -148,13 +165,18 @@ body {
 .header__button:hover {
   text-decoration: underline;
   background-color: var(--hover-color);
+  cursor: pointer;
+}
+
+.header__button:active {
+  background-color: #e0e0e0;
 }
 
 /* Shopping Cart */
 .header__shoppingCart {
   display: flex;
   cursor: pointer;
-  border: 0.0625rem solid #e0e0e0;
+  border: 0.0625rem solid var(--secondary-grey);
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
@@ -169,4 +191,116 @@ body {
 
 .header__shoppingCart:hover {
   background-color: var(--hover-color);
+}
+
+.header__shoppingCart:active {
+  background-color: var(--secondary-grey);
+}
+
+/* Header Navigation */
+.header__sub {
+  /* Animation in js to slide down */
+  border-bottom: 1px solid var(--secondary-grey);
+}
+
+/* Navigation Bar */
+.header__nav {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-white);
+  max-width: 1440px;
+  /* Change Padding accordingly on media */
+  padding: 8px 3rem 0 3rem;
+  margin: 0 auto;
+}
+
+.header__nav-ul {
+  display: flex;
+  white-space: nowrap;
+  list-style: none;
+  line-height: 48px;
+  margin-left: -12px;
+  margin-bottom: 8px;
+}
+
+.header__nav-product {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: var(--primary-textColor);
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.16px;
+}
+
+.header__nav-product:hover {
+  text-decoration: underline;
+  background-color: var(--hover-color);
+}
+
+.header__nav-product:active {
+  background-color: var(--secondary-grey);
+}
+
+.header__nav-product:first-child {
+  font-weight: 700;
+}
+
+.header__nav-ul svg {
+  color: var(--primary-color);
+  margin-right: 8px;
+}
+
+/* Coles Plus */
+.header__nav-colesplus {
+  display: block;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-colesplus img {
+  width: 84px;
+  height: 28px;
+  margin-top: 5px;
+  margin-right: 6px;
+}
+
+.header__nav-colesplus:hover {
+  background-color: var(--hover-color);
+}
+
+/* Location Setting */
+.header__location {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  color: var(--primary-textColor);
+  background-color: var(--primary-white);
+  text-align: left;
+  height: 3rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  letter-spacing: 0.16px;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.header__location:hover {
+  background-color: var(--hover-color);
+}
+
+.header__location:active {
+  background-color: var(--secondary-grey);
 }
