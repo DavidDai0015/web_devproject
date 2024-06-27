@@ -1,0 +1,101 @@
+/* Import root element */
+@import url(/coles_project/cs_root.css);
+
+/* Catagories Slider */
+.catagories__slider {
+  background-color: #fefaf0;
+}
+
+.catagories__slider .container {
+  padding: 0 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.catagories__slider-Container {
+  padding: 24px 0;
+  overflow-x: auto;
+}
+
+.catagories__slider-Container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-btn {
+  border: 1px solid var(--secondary-grey);
+  background-color: var(--primary-white);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 8px;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
+  box-shadow: 0px 8px 16px rgba(33, 33, 33, 0.12);
+  color: var(--body-color);
+}
+
+.carousel-btn:hover {
+  background-color: var(--hover-color);
+  border-color: var(--primary-textColor);
+  color: var(--primary-color);
+}
+
+.catagories__carousel-btn.next-button {
+  right: 30px;
+}
+
+.catagories__carousel-btn.previous-button {
+  left: 30px;
+}
+
+.carousel-btn.hidden {
+  display: none;
+}
+
+.catagories-carousel {
+  display: flex;
+  justify-content: left;
+}
+
+.carousel-item {
+  flex: 0 0 11.1111%;
+}
+
+.catagories-carousel .carousel-item a {
+  margin: 0 4px;
+  height: 120px;
+  padding-top: 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: 0px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.catagories-carousel .carousel-item img {
+  margin-bottom: 10px;
+}
+
+.catagories-carousel .carousel-item a:hover {
+  text-decoration: underline;
+}
+
+.catagories-carousel .carousel-item a:focus {
+  box-shadow: 0 0 0 2px var(--primary-white),
+    0 0 0 4px var(--focus-border-color);
+}
+
+.catagories-carousel .carousel-item img {
+  max-width: 64px;
+  max-height: 64px;
+}
