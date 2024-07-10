@@ -7,6 +7,8 @@
   --hover-color: #f5f5f5;
   --secondary-grey: #e0e0e0;
   --focus-border-color: #3872e6;
+  --primary-color-hover: #b9091d;
+  --border-round: 9999px;
 }
 
 /* Initalisation */
@@ -36,6 +38,8 @@ body {
   font-weight: 400;
   background-color: var(--primary-white);
   line-height: 1.5;
+  /* 10000px */
+  height: 10000px;
 }
 
 :focus-visible {
@@ -56,11 +60,21 @@ body {
 
 /* Header Section */
 .header__container {
-  position: static;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
+}
+
+.header__wrapper {
+  z-index: 999;
+  position: relative;
+  background-color: var(--primary-white);
+}
+
+.header_wrapper-sub {
+  background-color: var(--primary-white);
 }
 
 .header__main {
@@ -100,7 +114,7 @@ body {
 }
 
 .header__searchBox-input {
-  border-radius: 9999px;
+  border-radius: var(--border-round);
   background-color: var(--hover-color);
   padding: 0.75rem 1rem 0.75rem 1.5rem;
   border: 1px solid #8d8d8d;
@@ -138,7 +152,7 @@ body {
   text-align: left;
   display: inline-flex;
   align-items: center;
-  border-radius: 9999px;
+  border-radius: var(--border-round);
   color: var(--primary-textColor);
   padding: 8px;
 }
@@ -192,7 +206,7 @@ body {
   font-weight: 500;
   letter-spacing: 0px;
   padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
+  border-radius: var(--border-round);
   align-items: center;
   align-self: flex-end;
   margin-bottom: 0.5rem;
@@ -211,6 +225,15 @@ body {
 .header__sub {
   /* Animation in js to slide down */
   border-bottom: 1px solid var(--secondary-grey);
+  transform: translateY(0px);
+  transition: transform 0.3s cubic-bezier(0.1, 0, 0.2, 1) 0s;
+  background-color: var(--primary-white);
+}
+
+.header__sub.closed {
+  transition: transform 0.15s ease 0s;
+  transform: translateY(-100%);
+  box-shadow: var(--shadows-sm, 0px 4px 8px rgba(33, 33, 33, 0.12));
 }
 
 /* Navigation Bar */
@@ -224,6 +247,12 @@ body {
   /* Change Padding accordingly on media */
   padding: 8px 3rem 0 3rem;
   margin: 0 auto;
+  opacity: 1;
+  transition: opacity 0.1s ease-in 0.2s;
+}
+
+.header__nav.disable {
+  opacity: 0;
 }
 
 .header__nav-ul {
@@ -278,7 +307,7 @@ body {
 }
 
 .header__nav-colesplus img {
-  width: 84px;
+  min-width: 84px;
   height: 28px;
   margin-top: 5px;
   margin-right: 6px;
@@ -305,6 +334,7 @@ body {
   letter-spacing: 0.16px;
   cursor: pointer;
   gap: 8px;
+  min-width: 186.16px;
 }
 
 .header__location:hover {
@@ -313,4 +343,118 @@ body {
 
 .header__location:active {
   background-color: var(--secondary-grey);
+}
+
+/* Text Design */
+.xsm-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: 0.32px;
+}
+
+.white-text {
+  color: var(--primary-white);
+}
+
+/* Button utility */
+.primary-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  border-radius: var(--border-round);
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+  text-decoration: none;
+  align-items: center;
+  border: 0.0625rem solid transparent;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+}
+
+.primary-red-btn {
+  background-color: var(--primary-color);
+  color: var(--primary-white);
+}
+
+.primary-white-btn {
+  border-color: var(--secondary-grey);
+  background-color: var(--primary-white);
+  color: var(--primary-textColor);
+}
+
+.primary-white-outline-btn {
+  background-color: transparent;
+  color: var(--primary-white);
+  border-color: var(--primary-white);
+}
+
+/* Price Sign Utility */
+.fixed-price-sign {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-white);
+  width: 140.8px;
+  height: 140.8px;
+  border: 3px solid var(--primary-white);
+  box-shadow: 0px 0px 0px 0.1875rem var(--primary-white);
+  color: var(--primary-textColor);
+  padding: 0.25rem;
+  border-radius: var(--border-round);
+}
+
+.price-sign-text-hd {
+  letter-spacing: -0.03125rem;
+  margin-top: -0.4375rem;
+  font-size: 2.125rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 2.225rem;
+}
+
+.price-sign-text {
+  letter-spacing: 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.6rem;
+}
+
+.letter-spacing-md {
+  letter-spacing: 1px;
+}
+
+/* Color Utility */
+.grey-bg {
+  background-color: #323a41;
+  color: var(--primary-white);
+}
+
+.red-bg {
+  background-color: var(--primary-color);
+  color: var(--primary-white);
+}
+
+/* Dot utility */
+.pagination-dot {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  border-radius: var(--border-round);
+  border: 2px solid var(--primary-textColor);
+}
+
+.pagination-dot:hover {
+  background-color: var(--primary-textColor);
+}
+
+.pagination-dot.selected {
+  background-color: var(--primary-textColor);
 }

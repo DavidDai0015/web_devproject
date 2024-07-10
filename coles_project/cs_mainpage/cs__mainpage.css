@@ -1,5 +1,5 @@
 /* Import root element */
-@import url(/coles_project/cs_root.css);
+@import url(/coles_project/cs__root.css);
 
 /* Catagories Slider */
 .catagories__slider {
@@ -98,4 +98,216 @@
 .catagories-carousel .carousel-item img {
   max-width: 64px;
   max-height: 64px;
+}
+
+/* Hero Carousel */
+.hero__carousel {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero__container {
+  height: 476px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.hero__carousel-slide {
+  height: 100%;
+  width: 100vw;
+}
+
+.hero__slide-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.hero__slide-text {
+  padding: 3rem 3rem 1rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-text-main {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.slide-text-lower {
+  margin-top: 1rem;
+}
+
+.tnc-text {
+  text-decoration: underline;
+}
+
+.tnc-text:hover {
+  text-decoration: none;
+}
+
+.slide-text-header {
+  font-size: 2.6rem;
+  letter-spacing: 0.32px;
+  font-weight: 700;
+  line-height: 3rem;
+  white-space: wrap;
+}
+
+.slide-text-content {
+  font-size: 1.15rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.32px;
+  margin-top: 0.75rem;
+}
+
+.slide-text-btn-container {
+  margin-top: 2rem;
+  display: inline-flex;
+}
+
+.slide-text-btn {
+  margin-bottom: 0.75rem;
+  margin-right: 1rem;
+}
+
+.slide-text-btn.primary-red-btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.slide-text-btn.primary-white-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.slide-text-btn.primary-white-outline-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.hero-slide-img {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slide-img::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: auto;
+  height: 100%;
+  width: 3rem;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 476' preserveAspectRatio='none'%3E%3Cpath d='M0 476C29.682 402.369 46 322.064 46 238C46 153.936 29.682 73.6313 0 0L0 476Z'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+.slide-img-grey::before {
+  content: "";
+  background-color: #323a41;
+}
+
+.slide-img-red::before {
+  content: "";
+  background-color: var(--primary-color);
+}
+
+.slide-text-img {
+  height: 6.25rem;
+  position: relative;
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+/* Slide Index */
+.hero__index {
+  pointer-events: none;
+  position: absolute;
+  margin: 0 auto;
+  inset: 0;
+  z-index: 1;
+  display: block;
+}
+
+.hero__index-wrapper {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero__index-container {
+  position: absolute;
+  bottom: 18px;
+  right: 40px;
+  left: auto;
+  transform: translate(0px, 0px);
+  display: flex;
+  padding: 1px;
+  -webkit-box-align: center;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(33, 33, 33, 0.12);
+  border: 1px solid var(--secondary-grey);
+  border-radius: 9999px;
+  background-color: var(--primary-white);
+  pointer-events: all;
+}
+
+.hero_index-btn {
+  cursor: pointer;
+  border-radius: 9999px;
+  border: 1px solid #ffffff00;
+  background-color: #ffffff00;
+  color: #ffffff00;
+  font-size: 0px;
+  height: 40px;
+  width: 40px;
+}
+
+.hero-index-ul-container {
+  display: flex;
+  margin: 0 10px;
+}
+
+.index-autoplay-control {
+  margin-right: 12px;
+}
+
+.index-btn {
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #ffffff00;
+  background-color: #ffffff00;
+  color: var(--primary-textColor);
+  font-size: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.index-slide-ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+}
+
+.index-slide-li {
+  margin: 0 2px;
+}
+
+.index-slide-li:last-child {
+  margin-right: 0px;
+}
+
+.index-slide-li:first-child {
+  margin-left: 0px;
 }

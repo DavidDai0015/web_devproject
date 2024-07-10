@@ -12,71 +12,73 @@
   <header class="header__container">
 
     <!-- Header Section Upper -->
-    <section class="header__main flex">
+    <section class="header__wrapper">
+      <div class="header__main flex">
 
-      <!-- Header Logo -->
-      <a href="#" class="header__logo" aria-label="Coles Home">
-        <img src="./cs__mainpage-img/Coles_logo.png" alt="Coles Logo">
-      </a>
+        <!-- Header Logo -->
+        <a href="#" class="header__logo" aria-label="Coles Home">
+          <img src="./cs__mainpage-img/Coles_logo.png" alt="Coles Logo">
+        </a>
 
-      <!-- Header Search Bar -->
-      <div class="header__searchBar-Container">
-        <!-- Search box -->
-        <div class="header__searchBar-searchBox">
+        <!-- Header Search Bar -->
+        <div class="header__searchBar-Container">
+          <!-- Search box -->
+          <div class="header__searchBar-searchBox">
 
-          <!-- Input -->
-          <form action="search" class="header__searchBox-form">
-            <input type="search" placeholder="Search products & recipes" autocomplete="off" class="header__searchBox-input">
-          </form>
+            <!-- Input -->
+            <form action="search" class="header__searchBox-form">
+              <input type="search" placeholder="Search products & recipes" autocomplete="off" class="header__searchBox-input">
+            </form>
 
-          <!-- Button -->
-          <button class="header__searchBox-btn" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            <!-- Button -->
+            <button class="header__searchBox-btn" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Header Button Section -->
+        <div class="header__button-Container">
+          <!-- More from coles-->
+          <button class="header__button" aria-label="More from Coles">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" class="bi bi-grid" viewBox="0 0 16 16" aria-hidden="true">
+              <path stroke="currentColor" stroke-width="0.5" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
             </svg>
+            More from Coles
+          </button>
+
+          <!-- Login or Sign up -->
+          <button class="header__button" aria-label="Log in or Sign up">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="#000000" class="bi bi-person" viewBox="0 0 16 16" aria-hidden="true">
+              <path stroke="currentColor" stroke-width="0.5" d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+            </svg>
+            Log in / Sign up
+          </button>
+
+          <!-- Lists -->
+          <button class="header__button" aria-label="Lists">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" class="bi bi-journal-text" viewBox="0 0 16 16" aria-hidden="true">
+              <path stroke="currentColor" stroke-width="0.5" d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+              <path stroke="currentColor" stroke-width="0.5" d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+              <path stroke="currentColor" stroke-width="0.5" d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+            </svg>
+            Lists
           </button>
         </div>
-      </div>
 
-      <!-- Header Button Section -->
-      <div class="header__button-Container">
-        <!-- More from coles-->
-        <button class="header__button" aria-label="More from Coles">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" class="bi bi-grid" viewBox="0 0 16 16" aria-hidden="true">
-            <path stroke="currentColor" stroke-width="0.5" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+        <!-- Shopping cart -->
+        <div class="header__shoppingCart" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" aria-hidden="true">
+            <path stroke="currentColor" stroke-width="0.5" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
           </svg>
-          More from Coles
-        </button>
+          <span id="cartTotalAmount">
+            $0.00
+          </span>
+        </div>
 
-        <!-- Login or Sign up -->
-        <button class="header__button" aria-label="Log in or Sign up">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="#000000" class="bi bi-person" viewBox="0 0 16 16" aria-hidden="true">
-            <path stroke="currentColor" stroke-width="0.5" d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-          </svg>
-          Log in / Sign up
-        </button>
-
-        <!-- Lists -->
-        <button class="header__button" aria-label="Lists">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" class="bi bi-journal-text" viewBox="0 0 16 16" aria-hidden="true">
-            <path stroke="currentColor" stroke-width="0.5" d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
-            <path stroke="currentColor" stroke-width="0.5" d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
-            <path stroke="currentColor" stroke-width="0.5" d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
-          </svg>
-          Lists
-        </button>
       </div>
-
-      <!-- Shopping cart -->
-      <div class="header__shoppingCart" aria-label="Cart">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" aria-hidden="true">
-          <path stroke="currentColor" stroke-width="0.5" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
-        </svg>
-        <span id="cartTotalAmount">
-          $0.00
-        </span>
-      </div>
-
     </section>
 
     <!-- Header Navigation -->
@@ -118,8 +120,8 @@
         <!-- Container for SET YOUR LOCATION -->
         <Button class="header__location" aria-label="Set your location">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e01a22" class="bi bi-geo-alt" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
-            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            <path stroke="#e01a22" stroke-width="0.5" d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+            <path stroke="#e01a22" stroke-width="0.5" d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
           </svg>
           Set your Location
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#000000" class="bi bi-chevron-down" viewBox="0 0 16 12" aria-hidden="true">
@@ -169,79 +171,79 @@
           </li>
           <li class="carousel-item" aria-label="Dairy, Eggs & Fridge">
             <a href="#">
-              <img src="./cs.mainpage_img/diary_carousel.webp" alt="Dairy, Eggs & Fridge picture">
+              <img src="./cs__mainpage-img/diary_carousel.webp" alt="Dairy, Eggs & Fridge picture">
               Dairy, Eggs & Fridge
             </a>
           </li>
           <li class="carousel-item" aria-label="Bakery">
             <a href="#">
-              <img src="./cs.mainpage_img/bakery_carousel.webp" alt="Bakery picture">
+              <img src="./cs__mainpage-img/bakery_carousel.webp" alt="Bakery picture">
               Bakery
             </a>
           </li>
           <li class="carousel-item" aria-label="Pantry">
             <a href="#">
-              <img src="./cs.mainpage_img/pantry_carousel.webp" alt="Pantry picture">
+              <img src="./cs__mainpage-img/pantry_carousel.webp" alt="Pantry picture">
               Pantry
             </a>
           </li>
           <li class="carousel-item" aria-label="Deli">
             <a href="#">
-              <img src="./cs.mainpage_img/deli_carousel.webp" alt="Deli picture">
+              <img src="./cs__mainpage-img/deli_carousel.webp" alt="Deli picture">
               Deli
             </a>
           </li>
           <li class="carousel-item" aria-label="Juice">
             <a href="#">
-              <img src="./cs.mainpage_img/juice_carousel.webp" alt="Juice picture">
+              <img src="./cs__mainpage-img/juice_carousel.webp" alt="Juice picture">
               Drinks
             </a>
           </li>
           <li class="carousel-item" aria-label="Frozen">
             <a href="#">
-              <img src="./cs.mainpage_img/frozen_carousel.webp" alt="Frozen picture">
+              <img src="./cs__mainpage-img/frozen_carousel.webp" alt="Frozen picture">
               Frozen
             </a>
           </li>
           <li class="carousel-item" aria-label="Household Item">
             <a href="#">
-              <img src="./cs.mainpage_img/household_carousel.webp" alt="Household Item picture">
+              <img src="./cs__mainpage-img/household_carousel.webp" alt="Household Item picture">
               Household
             </a>
           </li>
           <li class="carousel-item" aria-label="Beauty & Health">
             <a href="#">
-              <img src="./cs.mainpage_img/beauty_carousel.webp" alt="Beauty & Health picture">
+              <img src="./cs__mainpage-img/beauty_carousel.webp" alt="Beauty & Health picture">
               Beauty & Health
             </a>
           </li>
           <li class="carousel-item" aria-label="Bonus Ovenware Credit">
             <a href="#">
-              <img src="./cs.mainpage_img/bonus_carousel.webp" alt="Bonus Ovenware Credit picture">
+              <img src="./cs__mainpage-img/bonus_carousel.webp" alt="Bonus Ovenware Credit picture">
               Bonus Ovenware Credit
             </a>
           </li>
           <li class="carousel-item" aria-label="Baby">
             <a href="#">
-              <img src="./cs.mainpage_img/baby_carousel.webp" alt="Baby picture">
+              <img src="./cs__mainpage-img/baby_carousel.webp" alt="Baby picture">
               Baby
             </a>
           </li>
           <li class="carousel-item" aria-label="Pet">
             <a href="#">
-              <img src="./cs.mainpage_img/pet_carousel.webp" alt="pet picture">
+              <img src="./cs__mainpage-img/pet_carousel.webp" alt="pet picture">
               Pet
             </a>
           </li>
           <li class="carousel-item" aria-label="Liquor">
             <a href="#">
-              <img src="./cs.mainpage_img/liquor_carousel.webp" alt="Liquor picture">
+              <img src="./cs__mainpage-img/liquor_carousel.webp" alt="Liquor picture">
               Liquor
             </a>
           </li>
           <li class="carousel-item" aria-label="Tobacco">
             <a href="#">
-              <img src="./cs.mainpage_img/tobacco_carousel.webp" alt="Tobacco picture">
+              <img src="./cs__mainpage-img//tobacco_carousel.webp" alt="Tobacco picture">
               Tobacco
             </a>
           </li>
@@ -265,10 +267,240 @@
   </section>
 
   <!-- Main Carousel -->
-   <section class="Hero__carousel">
+  <!-- Characteristic: Sliderable, Index Displayed, Auto Play, Loop-->
+  <section class="hero__carousel">
+    <div class="hero__container">
       
-   </section>
+      <div class="hero__carousel-slide grey-bg" data-index="0" aria-label="Coles Saving">
+        <div class="hero__slide-wrapper">
+          <div class="hero__slide-text">
+            <div class="slide-text-main">
+              <h2 class="slide-text-header">
+                Save more with Coles Plus Saver*
+              </h2>
+              <p class="slide-text-content">
+                Save up to $50 on one shop every calendar month & get double points on every shop.
+              </p>
+              <div class="slide-text-btn-container">
+                <a href="#" class="slide-text-btn primary-btn primary-red-btn" aria-label="Sign up">
+                  Sign up
+                </a>
+              </div>
+            </div>
+            
+            <div class="slide-text-lower">
+              <p class="xsm-text">
+                *$7/month fee. Limits, exclusions and
+                <a href="#" class="tnc-text">T&Cs apply</a>
+              </p>
+            </div>
+          </div>
 
-  <script src="./cs__mainpage.js"></script>
+          <div class="hero-slide-img slide-img-grey">
+            <img src="./cs__mainpage-img/savemore_hero_carousel.webp" alt="save more on Coles Plus" style="height: 100%;
+            width: 100%; inset: 0px; object-fit: cover; color: transparent;">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__carousel-slide red-bg" data-index="1" aria-label="Wine 30 Carousel">
+        <div class="hero__slide-wrapper">
+          <div class="hero__slide-text">
+            <div class="slide-text-main">
+              <h2 class="slide-text-header">
+                Get $30 off when you spend $100 on selected wines*
+              </h2>
+              <p class="slide-text-content">
+                Excludes cask wine. Use promo code 
+                <span style="font-weight: 700; text-transform: uppercase;">Wine30</span>
+                at checkout.
+              </p>
+              <div class="slide-text-btn-container">
+                <a href="#" class="slide-text-btn primary-btn primary-white-btn" aria-label="Shop now">
+                  Shop now
+                </a>
+              </div>
+            </div>
+            
+            <div class="slide-text-lower">
+              <p class="xsm-text">
+                *Offer ends 09/07. Exclusions and 
+                <a href="#" class="tnc-text">T&Cs apply</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="hero-slide-img slide-img-red">
+            <img src="./cs__mainpage-img/wine30_bg_hero_carousel.webp" alt="wine30 background image" style="height: 100%;
+            width: 100%; inset: 0px; object-fit: cover; color: transparent; position: absolute;">
+            <img src="./cs__mainpage-img/wine30_hero_carousel.webp" alt="wine30 image" style="z-index: 1;">
+
+            <div class="fixed-price-sign" style="position: absolute; top: 1.5rem; right: 1.5rem;" aria-label="$30 off">
+              <span class="price-sign-text-hd">$30</span>
+              <span class="price-sign-text">OFF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__carousel-slide red-bg" data-index="2" aria-label="Create share list in coles app">
+        <div class="hero__slide-wrapper">
+          <div class="hero__slide-text">  
+            <div class="slide-text-main">
+              <h2 class="slide-text-header">
+                Create shared lists in the Coles app
+              </h2>
+              <p class="slide-text-content">
+                Our new tool makes collaborating with your friends and family easier. 
+              </p>
+              <div class="slide-text-btn-container">
+                <a href="#" class="slide-text-btn primary-btn primary-white-btn" aria-label="Download here">
+                  Download here
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide-img slide-img-red">
+            <img src="./cs__mainpage-img/Coles_app_hero_carousel.webp" alt="Coles app background image" style="height: 100%;
+            width: 100%; inset: 0px; object-fit: cover; color: transparent; position: absolute;">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__carousel-slide red-bg" data-index="3" aria-label="flavour recipes">
+        <div class="hero__slide-wrapper">
+          <div class="hero__slide-text">  
+            <div class="slide-text-main">
+              <h2 class="slide-text-header">
+                Shop a world of flavour recipes now
+              </h2>
+              <div class="slide-text-btn-container">
+                <a href="#" class="slide-text-btn primary-btn primary-white-btn" aria-label="View recipes">
+                  View recipes
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide-img slide-img-red">
+            <img src="./cs__mainpage-img/view_receipes_hero_carousel.webp" alt="recipes background image" style="height: 100%;
+            width: 100%; inset: 0px; object-fit: cover; color: transparent; position: absolute;">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__carousel-slide red-bg" data-index="4" aria-label="Kids Sport">
+        <div class="hero__slide-wrapper">
+          <div class="hero__slide-text">  
+            <div class="slide-text-main">
+              <div class="slide-text-img">
+                <img src="./cs__mainpage-img/sport_brand_hero_carousel.webp" sizes="100vw" alt="sport brand PNG" style="height: 100%;
+                width: 100%; inset: 0px; object-fit: contain; color: transparent; position: absolute;">
+              </div>
+              <h2 class="slide-text-header">
+                Proudly supporting kids' community sports
+              </h2>
+              <p class="slide-text-content">
+                Partner of MiniRoos, Healthy Kicks and Little Athletics.
+              </p>
+              <div class="slide-text-btn-container">
+                <a href="#" class="slide-text-btn primary-btn primary-white-btn" aria-label="Learn More">
+                  Learn more
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide-img slide-img-red">
+            <img src="./cs__mainpage-img/kid_sport_hero_carousel.webp" alt="Kids sport picture" style="height: 100%;
+            width: 100%; inset: 0px; object-fit: cover; color: transparent; position: absolute;">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__carousel-slide grey-bg" data-index="5" aria-label="Kitchenware">
+        <div class="hero__slide-wrapper">
+          <div class="hero__slide-text">
+            <div class="slide-text-main">
+              <div class="slide-text-img">
+                <img src="./cs__mainpage-img/colesplus_hero_carousel.webp" sizes="100vw" alt="Coles Plus PNG" style="height: 100%;
+                width: 100%; inset: 0px; object-fit: contain; color: transparent; position: absolute;">
+              </div>
+              <h2 class="slide-text-header">
+                DOUBLE Ovenware credits with Coles Plus*
+              </h2>
+              <p class="slide-text-content">
+                This weekend, members will receive TWO credits for every $20 spent with their Flybuys linked.
+              </p>
+              <div class="slide-text-btn-container">
+                <a href="#" class="slide-text-btn primary-btn primary-red-btn" aria-label="Sign up">
+                  Sign up
+                </a>
+                <a href="#" class="slide-text-btn primary-btn primary-white-outline-btn" aria-label="Sign up">
+                  Start shopping
+                </a>
+              </div>
+            </div>
+            
+            <div class="slide-text-lower">
+              <p class="xsm-text">
+                *Valid 6-7 July. Limits, exclusions and 
+                <a href="#" class="tnc-text">T&Cs apply</a>
+                . © 2024 KitchenAid. All Rights Reserved
+              </p>
+            </div>
+          </div>
+
+          <div class="hero-slide-img slide-img-grey">
+            <img src="./cs__mainpage-img/kitchenware_hero_carousel.webp" alt="Kitchenware Picture" style="height: 100%;
+            width: 100%; inset: 0px; object-fit: cover; color: transparent;">
+
+            <div class="fixed-price-sign grey-bg" style="position: absolute; top: 50%; left: -40px; transform: translateY(-50%);" aria-label="Double Ovenware Credit">
+              <span class="price-sign-text" style="background-color: var(--primary-color); line-height: 1.6rem; letter-spacing: 1px;">Double</span>
+              <span class="price-sign-text letter-spacing-md">Ovenware</span>
+              <span class="price-sign-text letter-spacing-md">credit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- index-Container -->
+    <div class="hero__index">
+      <div class="hero__index-wrapper">
+        <div class="hero__index-container">
+          <button class="hero_index-btn previous-button" aria-label="previous page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#212121" class="bi bi-chevron-left" viewBox="0 0 16 16" aria-hidden="true">
+              <path stroke="#212121" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+            </svg>
+          </button>
+
+          <div class="hero-index-ul-container">
+
+            <div class="index-autoplay-control">
+              <button class="index-autoplay-control-btn index-btn" aria-label="autoplay">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16" aria-hidden="true">
+                  <path stroke="currentColor" stroke-width="0.5" d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/>
+                </svg>
+              </button>
+            </div>
+
+            <ul class="index-slide-ul">
+            </ul>
+          </div>
+
+          <button class="hero_index-btn next-button" aria-label="Next page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#212121" class="bi bi-chevron-right" viewBox="0 0 16 16"  aria-hidden="true">
+              <path stroke="#212121" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="./cs__mainpage.js"></script>
 </body>
 </html>
