@@ -105,13 +105,15 @@
   margin-bottom: 1.5rem;
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .hero__container {
   height: 476px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: left;
+  position: relative;
 }
 
 .hero__carousel-slide {
