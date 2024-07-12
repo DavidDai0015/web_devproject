@@ -1,17 +1,18 @@
+/* Root Variables */
 :root {
-  /* Primary Color */
-  --primary-color: #e01a22;
-  --primary-textColor: #212121;
-  --body-color: #3d3d3d;
-  --primary-white: #ffffff;
-  --hover-color: #f5f5f5;
-  --secondary-grey: #e0e0e0;
-  --focus-border-color: #3872e6;
-  --primary-color-hover: #b9091d;
-  --border-round: 9999px;
+  /* Colors */
+  --primary-color: #e01a22; /* Primary color */
+  --primary-textColor: #212121; /* Primary text color */
+  --body-color: #3d3d3d; /* Body text color */
+  --primary-white: #ffffff; /* Primary white */
+  --hover-color: #f5f5f5; /* Hover color */
+  --secondary-grey: #e0e0e0; /* Secondary grey */
+  --focus-border-color: #3872e6; /* Focus border color */
+  --primary-color-hover: #b9091d; /* Primary color hover */
+  --border-round: 9999px; /* Border radius */
 }
 
-/* Initalisation */
+/* Initialization */
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +32,7 @@ img {
   max-width: 100%;
 }
 
+/* Body Styles */
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -38,10 +40,11 @@ body {
   font-weight: 400;
   background-color: var(--primary-white);
   line-height: 1.5;
-  /* 10000px */
+  /* Temporary height for demonstration */
   height: 10000px;
 }
 
+/* Focus-visible */
 :focus-visible {
   outline-color: var(--focus-border-color);
 }
@@ -73,18 +76,16 @@ body {
   background-color: var(--primary-white);
 }
 
-.header_wrapper-sub {
-  background-color: var(--primary-white);
-}
-
+/* Main Header Section */
 .header__main {
   max-width: 1440px;
-  /* Padding change on Media */
+  /* Padding adjustment for different screen sizes */
   padding: 0 3rem;
   margin: 0 auto;
   background-color: var(--primary-white);
   gap: 6px;
   height: 80px;
+  padding-bottom: 0.75rem;
 }
 
 /* Header Logo */
@@ -108,7 +109,7 @@ body {
   position: relative;
 }
 
-/* Header Search Bar Input --- */
+/* Header Search Bar Input */
 .header__searchBox-form {
   width: 100%;
 }
@@ -139,7 +140,7 @@ body {
   border-color: var(--primary-textColor);
 }
 
-/* Header Search Bar Button --- */
+/* Header Search Bar Button */
 .header__searchBox-btn {
   background-color: transparent;
   position: absolute;
@@ -161,13 +162,14 @@ body {
   border-color: var(--primary-textColor);
 }
 
-/* Header button  */
+/* Header Button Container */
 .header__button-Container {
   display: flex;
   gap: 6px;
   align-self: flex-end;
 }
 
+/* Header Button */
 .header__button {
   display: flex;
   flex-direction: column;
@@ -223,7 +225,7 @@ body {
 
 /* Header Navigation */
 .header__sub {
-  /* Animation in js to slide down */
+  /* Animation in JS to slide down */
   border-bottom: 1px solid var(--secondary-grey);
   transform: translateY(0px);
   transition: transform 0.3s cubic-bezier(0.1, 0, 0.2, 1) 0s;
@@ -244,7 +246,7 @@ body {
   align-items: center;
   background-color: var(--primary-white);
   max-width: 1440px;
-  /* Change Padding accordingly on media */
+  /* Adjust padding for different screen sizes */
   padding: 8px 3rem 0 3rem;
   margin: 0 auto;
   opacity: 1;

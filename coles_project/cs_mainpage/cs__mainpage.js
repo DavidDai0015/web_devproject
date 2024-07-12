@@ -1,110 +1,220 @@
-// Load the Documents
-document.addEventListener("DOMContentLoaded", function () {
-  carouselSliderProduct();
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize hero carousel functionality
+  initHeroCarousel();
+  initProductCarousel();
   updateHeroCaroWidth();
-  hiddenNav();
+  initNavHideOnScroll();
 });
 
-// OnScroll Disable Navigation
-function hiddenNav() {
-  const navigationBar = document.querySelector(".header__sub");
-  const navBarFlex = document.querySelector(".header__nav");
+// Initialize hero carousel functionality
+function initHeroCarousel() {
+  const wrapper = document.querySelector('.hero__carousel');
+  const carousel = wrapper.querySelector('.hero__container');
+  const arrowBtns = wrapper.querySelectorAll('.hero_index-btn');
+  const firstCard = carousel.querySelector('.hero__carousel-slide');
 
-  if (!navigationBar || !navBarFlex) {
-    console.error("Navigation elements not found.");
-    return;
+  // Defining neccesary Variable
+  let direction = -1;
+  let isTransitioning = false;
+  let dragging = false;
+  let startX = 0;
+  let draggingDisabled = false;
+
+  // Event listeners for drag functionality
+  carousel.addEventListener('mousedown', handleDragStart);
+  carousel.addEventListener('mouseup', handleDragEnd);
+  carousel.addEventListener('mouseleave', handleDragEnd);
+  carousel.addEventListener('mousemove', handleDragMove);
+
+  // Event Listener For Button
+  carousel.addEventListener('transitionend', handleTransitionEnd);
+  arrowBtns.forEach(btn => { btn.addEventListener('click', () => handleArrowClick(btn)); });
+
+  // Button Functionality ================================================================================================================
+  function handleArrowClick(btn) {
+
+    // Disable button & drag when pressing
+    arrowBtns.forEach(button => button.disabled = true);
+    draggingDisabled = true;
+
+    // Adjustment to the carousel when changing direction & Transform
+    const isNext = btn.classList.contains("next-button");
+    transformCarousel(isNext, firstCard.clientWidth)
+    isTransitioning = true;
+
+    // Adding Animation
+    carousel.style.transition = 'transform 500ms ease';
   }
 
-  document.addEventListener("scroll", () => {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-      navigationBar.classList.add("closed");
-      navBarFlex.classList.add("disable");
+  // Drag Functionality ================================================================================================================
+  // Track the starting position and start drag event
+  function handleDragStart(event) {
+    if (draggingDisabled) return;
+    startX = event.clientX;
+    dragging = true;
+    carousel.style.transition = '';
+  }
+
+  function handleDragMove(event) {
+    if (!dragging || draggingDisabled) return;
+    const diffX = event.clientX - startX;
+    carousel.style.transform = `translate3d(${diffX}px, 0, 0)`;
+  }
+
+  function handleDragEnd(event) {
+    if (!dragging) return;
+    dragging = false;
+    draggingDisabled = true;
+
+    // Add Animation
+    carousel.style.transition = 'transform 500ms ease';
+
+    const currentX = event.clientX
+    const diffX = currentX - startX;
+
+    // Determine if a slide change is needed
+    if (Math.abs(diffX) > 150) {
+      transformCarousel(diffX < 0, firstCard.clientWidth)
+      isTransitioning = true;
+
     } else {
-      navigationBar.classList.remove("closed");
-      navBarFlex.classList.remove("disable");
+      // Revert to original position
+      carousel.style.transform = `translate3d(0, 0, 0)`;
+      setTimeout(() => { draggingDisabled = false; }, 500)
     }
-  });
-}
 
-// Detecting Button Function
-function carouselSliderProduct() {
-  const carouselBtns = document.querySelectorAll(".carousel-btn");
-
-  if (!carouselBtns.length) {
-    console.error("Carousel buttons not found.");
-    return;
+    // Update Index
+    updateIndexPagination();
   }
 
-  carouselBtns.forEach(button => {
-    button.addEventListener("click", () => {
-      handleCarouselButtonClick(button);
-    });
-  });
-}
+  // Transition End ================================================================================================================
 
-// Button Core Functionality
-function handleCarouselButtonClick(button) {
-  const carouselClass = button.getAttribute("data-carouselClass");
-  const carouselSlider = document.querySelector(`.${carouselClass}`);
+  // Handle transition end events
+  function handleTransitionEnd() {
+    if (!isTransitioning) return;
 
-  if (!carouselSlider) {
-    console.error(`Carousel slider with class ${carouselClass} not found.`);
-    return;
+    // Move the slide to the end
+    if (direction === -1) {
+      carousel.appendChild(carousel.firstElementChild);
+    } else if (direction === 1) {
+      carousel.prepend(carousel.lastElementChild);
+    }
+
+    carousel.style.transition = '';
+    carousel.style.transform = 'translate3d(0, 0, 0)';
+
+    setTimeout(() => {
+      arrowBtns.forEach(button => button.disabled = false);
+      isTransitioning = false;
+      draggingDisabled = false;
+    }, 0);
+
+    updateIndexPagination();
   }
 
-  const direction = button.classList.contains("previous-button") ? -1 : 1;
-  const scrollAmount = carouselSlider.clientWidth * direction;
-  const oppositeBtn = getOppositeButton(button, direction);
 
-  scrollCarousel(carouselSlider, scrollAmount);
-  oppositeBtn.classList.remove("hidden");
+  // Transform the Carousel
+  function transformCarousel(isRight, transformAmount) {
+    if (direction === -1 && !isRight) {
+      direction = 1;
+      carousel.appendChild(carousel.firstElementChild);
+    } else if (direction === 1 && isRight) {
+      direction = -1;
+      carousel.prepend(carousel.lastElementChild);
+    }
 
-  updateButtonVisibility(button, carouselSlider, direction, scrollAmount);
+    direction = isRight ? -1 : 1
+    wrapper.style.justifyContent = isRight ? 'flex-start' : 'flex-end';
+    carousel.style.transform = `translate3d(${direction * transformAmount}px, 0, 0)`;
+  }
+
+  // Update Dot ================================================================================================================
+  // Update the Dot index
+  function updateIndexPagination() {
+    const paginations = wrapper.querySelectorAll('.pagination-dot');
+    const selectedIndex = direction === -1 ?
+      carousel.firstElementChild.getAttribute('data-index') :
+      carousel.lastElementChild.getAttribute('data-index');
+
+    // Remove dot classes
+    paginations.forEach(pagination => { pagination.classList.remove('selected'); });
+    paginations[selectedIndex].classList.add('selected');
+  }
+
 }
 
-// Determine the Opposite Button
-function getOppositeButton(button, direction) {
-  const classList = button.classList[0];
-  return direction < 0
-    ? document.querySelector(`.${classList}.next-button`)
-    : document.querySelector(`.${classList}.previous-button`);
-}
+// Product Carousel ================================================================================================================
+// Initialize hero carousel functionality
+function initProductCarousel() {
+  const carouselBtns = document.querySelectorAll('.carousel-btn');
 
-function scrollCarousel(carouselSlider, scrollAmount) {
-  carouselSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-}
+  // Add event Listener for the Button
+  carouselBtns.forEach(button => { button.addEventListener('click', () => handleCarouselButtonClick(button)); });
 
-// Update Button display
-function updateButtonVisibility(button, carouselSlider, direction, scrollAmount) {
-  const scrollable = carouselSlider.scrollWidth - carouselSlider.clientWidth - scrollAmount - carouselSlider.scrollLeft;
-  const atEnd = scrollable <= 0;
-  const atStart = scrollable + carouselSlider.clientWidth === carouselSlider.scrollWidth;
+  function handleCarouselButtonClick(button) {
+    const carouselClass = button.getAttribute('data-carouselClass');
+    const carouselSlider = document.querySelector(`.${carouselClass}`);
 
-  if (direction > 0 && atEnd) {
-    button.classList.add("hidden");
-  } else if (direction < 0 && atStart) {
-    button.classList.add("hidden");
+    if (!carouselSlider) { // Debugging
+      console.error(`Carousel slider with class ${carouselClass} not found.`);
+      return;
+    }
+
+    // Calculate the scrollamount, direction, and the opposing button
+    const direction = button.classList.contains('previous-button') ? -1 : 1;
+    const scrollAmount = carouselSlider.clientWidth * direction;
+    const oppositeBtn = getOppositeButton(button, direction);
+
+
+    scrollCarousel(carouselSlider, scrollAmount);
+    oppositeBtn.classList.remove('hidden');
+
+    updateButtonVisibility(button, carouselSlider, direction, scrollAmount);
+  }
+
+  // Get Opposing Button
+  function getOppositeButton(button, direction) {
+    const classList = button.classList[0];
+    return direction < 0 ?
+      document.querySelector(`.${classList}.next-button`) :
+      document.querySelector(`.${classList}.previous-button`);
+  }
+
+  // Scroll Button
+  function scrollCarousel(carouselSlider, scrollAmount) {
+    carouselSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+
+  function updateButtonVisibility(button, carouselSlider, direction, scrollAmount) {
+    // Scrollable = What is the width in total - the size of displaying - how much you going to scroll - how much left to scroll
+    const scrollable = carouselSlider.scrollWidth - carouselSlider.clientWidth - scrollAmount - carouselSlider.scrollLeft;
+    const atEnd = scrollable <= 0;
+    const atStart = scrollable + carouselSlider.clientWidth >= carouselSlider.scrollWidth;
+
+    // if reaches the end, hide the button
+    if (direction > 0 && atEnd) {
+      button.classList.add('hidden');
+    } else if (direction < 0 && atStart) {
+      button.classList.add('hidden');
+    }
   }
 }
 
-// Hero Carousel width changer & Element
+// Initilisation of Hero Carousel ================================================================================================================
+// Change the Hero Carousel Width accordding to the number of slide 
 function updateHeroCaroWidth() {
-  const heroContainer = document.querySelector(".hero__container");
-  const heroIndexUl = document.querySelector(".index-slide-ul");
-
-  if (!heroContainer || !heroIndexUl) {
-    console.error("Hero container or index list not found.");
-    return;
-  }
+  const heroContainer = document.querySelector('.hero__container');
+  const heroIndexUl = document.querySelector('.index-slide-ul');
 
   const containerSlideNum = heroContainer.childElementCount;
-  let indexLi = "";
+  let indexLi = '';
 
   heroContainer.style.width = `calc(100vw * ${containerSlideNum})`;
 
+  // for each slide, add a pagination dot
   for (let i = 0; i < containerSlideNum; i++) {
-    indexLi +=
-      `<li class="index-slide-li selected">
+    indexLi += `
+      <li class="index-slide-li">
         <button class="index-slide-pagination index-btn">
           <span class="pagination-dot" aria-label="hidden"></span>
         </button>
@@ -112,74 +222,38 @@ function updateHeroCaroWidth() {
   }
 
   heroIndexUl.innerHTML = indexLi;
-  updateIndexPagination()
-}
-
-// Testing
-const wrapper = document.querySelector('.hero__carousel');
-const carousel = wrapper.querySelector('.hero__container');
-const arrowBtns = wrapper.querySelectorAll('.hero_index-btn');
-const firstCard = carousel.querySelector('.hero__carousel-slide');
-
-let translationHeroCarousel = 0;
-let direction = -1;
-
-function handleArrowClick(btn) {
-  // Disable buttons to prevent multiple clicks during transition
-  arrowBtns.forEach(button => button.disabled = true);
-
-  if (direction === -1 && btn.id !== 'left') {
-    direction = 1;
-    carousel.appendChild(carousel.firstElementChild);
-  } else if (direction === 1 && btn.id === 'left') {
-    direction = -1;
-    carousel.prepend(carousel.lastElementChild);
-  }
-
-  translationHeroCarousel = btn.id === 'left' ? -firstCard.clientWidth : firstCard.clientWidth;
-  direction = btn.id === 'left' ? -1 : 1;
-  wrapper.style.justifyContent = btn.id === 'left' ? 'flex-start' : 'flex-end';
-
-  carousel.style.transition = 'transform 500ms ease';
-  carousel.style.transform = `translate3d(${translationHeroCarousel}px, 0, 0)`;
-}
-
-function handleTransitionEnd() {
-  if (direction === -1) {
-    carousel.appendChild(carousel.firstElementChild);
-  } else if (direction === 1) {
-    carousel.prepend(carousel.lastElementChild);
-  }
-
-  carousel.style.transition = 'none';
-  carousel.style.transform = 'translate3d(0, 0, 0)';
-
-  // Re-enable the buttons after the transition ends
-  setTimeout(() => {
-    arrowBtns.forEach(button => button.disabled = false);
-  }, 0);
-
   updateIndexPagination();
+
+  function updateIndexPagination() {
+    const paginations = heroIndexUl.querySelectorAll('.pagination-dot');
+    paginations.forEach(pagination => {
+      pagination.classList.remove('selected');
+    });
+
+    // Assuming the first dot should be selected initially
+    if (paginations.length > 0) {
+      paginations[0].classList.add('selected');
+    }
+  }
 }
 
-function updateIndexPagination() {
-  const paginations = wrapper.querySelectorAll('.pagination-dot');
-  const selectedIndex = direction === -1 ?
-    carousel.firstElementChild.getAttribute('data-index') :
-    carousel.lastElementChild.getAttribute('data-index');
+// Initilisation scroll hidden Navigation ================================================================================================================
+function initNavHideOnScroll() {
+  const navigationBar = document.querySelector('.header__sub');
+  const navBarFlex = document.querySelector('.header__nav');
 
-  paginations.forEach(pagination => {
-    pagination.classList.remove('selected');
+  if (!navigationBar || !navBarFlex) {
+    console.error('Navigation elements not found.');
+    return;
+  }
+
+  document.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      navigationBar.classList.add('closed');
+      navBarFlex.classList.add('disable');
+    } else {
+      navigationBar.classList.remove('closed');
+      navBarFlex.classList.remove('disable');
+    }
   });
-
-  paginations[selectedIndex].classList.add('selected');
 }
-
-arrowBtns.forEach(btn => {
-  btn.addEventListener('click', () => handleArrowClick(btn));
-});
-
-carousel.addEventListener('transitionend', handleTransitionEnd);
-
-
-

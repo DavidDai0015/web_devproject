@@ -1,11 +1,12 @@
 /* Import root element */
 @import url(/coles_project/cs__root.css);
 
-/* Catagories Slider */
+/* Categories Slider */
 .catagories__slider {
   background-color: #fefaf0;
 }
 
+/* Categories Slider Container */
 .catagories__slider .container {
   padding: 0 48px;
   max-width: 1440px;
@@ -13,15 +14,18 @@
   position: relative;
 }
 
+/* Categories Slider Container Padding */
 .catagories__slider-Container {
   padding: 24px 0;
   overflow-x: auto;
 }
 
+/* Hide scrollbar */
 .catagories__slider-Container::-webkit-scrollbar {
   display: none;
 }
 
+/* Carousel Button Styles */
 .carousel-btn {
   border: 1px solid var(--secondary-grey);
   background-color: var(--primary-white);
@@ -45,27 +49,33 @@
   color: var(--primary-color);
 }
 
+/* Next Button Position */
 .catagories__carousel-btn.next-button {
   right: 30px;
 }
 
+/* Previous Button Position */
 .catagories__carousel-btn.previous-button {
   left: 30px;
 }
 
+/* Hidden Carousel Button */
 .carousel-btn.hidden {
   display: none;
 }
 
+/* Categories Carousel */
 .catagories-carousel {
   display: flex;
   justify-content: left;
 }
 
+/* Carousel Item */
 .carousel-item {
   flex: 0 0 11.1111%;
 }
 
+/* Carousel Item Link */
 .catagories-carousel .carousel-item a {
   margin: 0 4px;
   height: 120px;
@@ -109,6 +119,7 @@
   justify-content: flex-start;
 }
 
+/* Hero Carousel Container */
 .hero__container {
   height: 476px;
   display: inline-flex;
@@ -116,19 +127,23 @@
   position: relative;
 }
 
+/* Hero Carousel Slide */
 .hero__carousel-slide {
   height: 100%;
   width: 100vw;
 }
 
+/* Hero Slide Wrapper */
 .hero__slide-wrapper {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
   height: 100%;
   position: relative;
+  user-select: none;
 }
 
+/* Hero Slide Text */
 .hero__slide-text {
   padding: 3rem 3rem 1rem;
   width: 50%;
@@ -136,6 +151,7 @@
   flex-direction: column;
 }
 
+/* Slide Text Main */
 .slide-text-main {
   flex: 1 1 0;
   display: flex;
@@ -144,10 +160,12 @@
   align-items: left;
 }
 
+/* Slide Text Lower */
 .slide-text-lower {
   margin-top: 1rem;
 }
 
+/* Terms and Conditions Text */
 .tnc-text {
   text-decoration: underline;
 }
@@ -156,6 +174,7 @@
   text-decoration: none;
 }
 
+/* Slide Text Header */
 .slide-text-header {
   font-size: 2.6rem;
   letter-spacing: 0.32px;
@@ -164,6 +183,7 @@
   white-space: wrap;
 }
 
+/* Slide Text Content */
 .slide-text-content {
   font-size: 1.15rem;
   line-height: 1.75rem;
@@ -172,16 +192,19 @@
   margin-top: 0.75rem;
 }
 
+/* Slide Text Button Container */
 .slide-text-btn-container {
   margin-top: 2rem;
   display: inline-flex;
 }
 
+/* Slide Text Button */
 .slide-text-btn {
   margin-bottom: 0.75rem;
   margin-right: 1rem;
 }
 
+/* Slide Text Button Hover Effects */
 .slide-text-btn.primary-red-btn:hover {
   background-color: var(--primary-color-hover);
 }
@@ -194,14 +217,17 @@
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* Hero Slide Image */
 .hero-slide-img {
   position: relative;
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
+/* Hero Slide Image Overlay */
 .hero-slide-img::before {
   position: absolute;
   left: 0;
@@ -213,16 +239,19 @@
   z-index: 1;
 }
 
+/* Slide Image Grey Overlay */
 .slide-img-grey::before {
   content: "";
   background-color: #323a41;
 }
 
+/* Slide Image Red Overlay */
 .slide-img-red::before {
   content: "";
   background-color: var(--primary-color);
 }
 
+/* Slide Text Image */
 .slide-text-img {
   height: 6.25rem;
   position: relative;
@@ -240,6 +269,7 @@
   display: block;
 }
 
+/* Slide Index Wrapper */
 .hero__index-wrapper {
   max-width: 1440px;
   height: 100%;
@@ -247,6 +277,7 @@
   position: relative;
 }
 
+/* Slide Index Container */
 .hero__index-container {
   position: absolute;
   bottom: 18px;
@@ -265,6 +296,7 @@
   pointer-events: all;
 }
 
+/* Hero Index Button */
 .hero_index-btn {
   cursor: pointer;
   border-radius: 9999px;
@@ -276,15 +308,18 @@
   width: 40px;
 }
 
+/* Hero Index UL Container */
 .hero-index-ul-container {
   display: flex;
   margin: 0 10px;
 }
 
+/* Index Autoplay Control */
 .index-autoplay-control {
   margin-right: 12px;
 }
 
+/* Index Button */
 .index-btn {
   cursor: pointer;
   border-radius: 4px;
@@ -296,12 +331,14 @@
   width: 24px;
 }
 
+/* Index Slide UL */
 .index-slide-ul {
   display: flex;
   list-style: none;
   text-align: center;
 }
 
+/* Index Slide LI */
 .index-slide-li {
   margin: 0 2px;
 }
